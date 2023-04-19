@@ -17,7 +17,7 @@ for repo in "${repos[@]}"; do
   array=("${open_prs[@]/#/ -not -name }")
   command=$(printf '%s' "${array[@]}")
 
-  find ./$repository -mindepth 1 -maxdepth 1 -type d -not -name dev -not -name master -not -name live ${command} -exec echo rm -rf '{}' \;
+  find ./$repository -mindepth 1 -maxdepth 1 -type d -not -name dev -not -name master -not -name live ${command} -exec rm -rf '{}' \;
 done
 
 git add . ;
