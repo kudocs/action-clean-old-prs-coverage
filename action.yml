@@ -1,0 +1,17 @@
+name: 'Delete old folders from repo'
+description: 'Delete code coverage folders if PR where closed'
+
+inputs:
+   GITHUB_TOKEN:
+     description: 'Github token'
+     required: true
+
+runs:
+   using: 'docker'
+   image: 'Dockerfile'
+   args:
+      - ${{ inputs.GITHUB_TOKEN }}
+
+branding:
+  icon: 'tag'
+  color: 'green'
